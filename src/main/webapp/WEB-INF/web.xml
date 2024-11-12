@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         id="WebApp_ID" version="5.0">
+
+    <display-name>control1_JEE</display-name>
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>default.html</welcome-file>
+        <welcome-file>default.jsp</welcome-file>
+        <welcome-file>default.htm</welcome-file>
+    </welcome-file-list>
+
+    <!-- Define the first servlet -->
+    <servlet>
+        <servlet-name>controleurServlet</servlet-name>
+        <servlet-class>web.ControleurServlet</servlet-class>
+    </servlet>
+
+    <!-- Mapping for the first servlet -->
+    <servlet-mapping>
+        <servlet-name>controleurServlet</servlet-name>
+        <url-pattern>/controleur</url-pattern> <!-- Mapping for /controleur -->
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>controleurServlet</servlet-name>
+        <url-pattern>*.do</url-pattern> <!-- Mapping for *.do -->
+    </servlet-mapping>
+
+    <!-- Define the second servlet (SaisieServlet) -->
+    <servlet>
+        <servlet-name>SaisieServlet</servlet-name>
+        <servlet-class>com.example.SaisieServlet</servlet-class>
+    </servlet>
+
+    <!-- Mapping for the second servlet -->
+    <servlet-mapping>
+        <servlet-name>SaisieServlet</servlet-name>
+        <url-pattern>/saisie.do</url-pattern> <!-- Mapping for /saisie.do -->
+    </servlet-mapping>
+
+</web-app>
